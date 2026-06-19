@@ -31,11 +31,11 @@ body {
   animation: slide-in 0.2s ease-out both;
 }
 
-@keyframes slide-in {
-  from { opacity: 0; transform: translateX(32px); }
-  to   { opacity: 1; transform: translateX(0); }
+@media (min-width: 768px) {
+  .landing-mente-img      { margin-bottom: 8px !important; }
+  .landing-bloco-destaque { margin-top: 8px !important; }
+  .landing-qi-texto       { margin-bottom: 16px !important; }
 }
-.slide-in { animation: slide-in 0.2s ease-out both; }
 
 @keyframes pulse-brain {
   0%, 100% { transform: scale(1); }

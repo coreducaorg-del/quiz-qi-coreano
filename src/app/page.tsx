@@ -57,6 +57,7 @@ export default function Home() {
         <img
           src="/mente.png"
           alt="Cérebro e bandeira coreana"
+          className="landing-mente-img"
           style={{
             width: '100%',
             borderRadius: 16,
@@ -71,6 +72,7 @@ export default function Home() {
       {/* Seção 2 — Frase destacada + complementar */}
       <div style={{ textAlign: 'center' }}>
         <p
+          className="landing-bloco-destaque"
           style={{
             fontSize: 18,
             fontWeight: 700,
@@ -93,6 +95,7 @@ export default function Home() {
         </p>
 
         <p
+          className="landing-qi-texto"
           style={{
             fontSize: 18,
             fontWeight: 700,
