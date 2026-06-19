@@ -67,6 +67,13 @@ export default function ResultadoConteudo() {
         </span>
       </p>
 
+      {/* Barra de perfis */}
+      <img
+        src="/barraquiz.png"
+        alt="Barra de perfis QI Coreano"
+        style={{ width: '100%', marginTop: 16, marginBottom: 20, display: 'block' }}
+      />
+
       {/* Subtítulo */}
       <p
         style={{
