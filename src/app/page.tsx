@@ -53,6 +53,19 @@ export default function Home() {
         >
           Mesmo se não sabe nada de coreano!
         </p>
+
+        <img
+          src="/mente.png"
+          alt="Cérebro e bandeira coreana"
+          style={{
+            width: '100%',
+            borderRadius: 16,
+            objectFit: 'cover',
+            marginTop: 24,
+            marginBottom: 32,
+            display: 'block',
+          }}
+        />
       </div>
 
       {/* Seção 2 — Frase destacada + complementar */}
@@ -62,7 +75,7 @@ export default function Home() {
             fontSize: 18,
             fontWeight: 700,
             lineHeight: 1.85,
-            margin: '0 0 18px',
+            margin: '32px 0 18px',
           }}
         >
           <span
