@@ -1,65 +1,127 @@
-import Image from "next/image";
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div
+      style={{
+        background: '#EDE9FE',
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        padding: '52px 28px 36px',
+        maxWidth: 430,
+        margin: '0 auto',
+        boxSizing: 'border-box',
+      }}
+    >
+      {/* Seção 1 — Título + subtítulo itálico */}
+      <div style={{ textAlign: 'center' }}>
+        <h1
+          style={{
+            fontSize: 38,
+            fontWeight: 900,
+            color: '#0D0D0D',
+            lineHeight: 1.15,
+            margin: '0 0 18px',
+          }}
+        >
+          Descubra o seu{' '}
+          <span
+            style={{
+              background: '#5B21B6',
+              color: '#FFFFFF',
+              borderRadius: 4,
+              padding: '0 5px',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            &ldquo;QI Coreano&rdquo;
+          </span>{' '}
+          em menos de 2 min!
+        </h1>
+
+        <p
+          style={{
+            fontSize: 15,
+            fontStyle: 'italic',
+            color: '#7C3AED',
+            fontWeight: 400,
+            margin: 0,
+            lineHeight: 1.5,
+          }}
+        >
+          Mesmo se não sabe nada de coreano!
+        </p>
+      </div>
+
+      {/* Seção 2 — Frase destacada + complementar */}
+      <div style={{ textAlign: 'center' }}>
+        <p
+          style={{
+            fontSize: 18,
+            fontWeight: 700,
+            lineHeight: 1.85,
+            margin: '0 0 18px',
+          }}
+        >
+          <span
+            style={{
+              background: '#5B21B6',
+              color: '#FFFFFF',
+              padding: '2px 7px',
+              borderRadius: 4,
+              WebkitBoxDecorationBreak: 'clone',
+              boxDecorationBreak: 'clone',
+            }}
+          >
+            Certas pessoas têm mais facilidade em aprender coreano do que outras.
+          </span>
+        </p>
+
+        <p
+          style={{
+            fontSize: 18,
+            fontWeight: 700,
+            color: '#0D0D0D',
+            margin: 0,
+            lineHeight: 1.4,
+          }}
+        >
+          O que dita isso é o seu <strong style={{ fontWeight: 900 }}>QI Coreano.</strong>
+        </p>
+      </div>
+
+      {/* Seção 3 — Botão + rodapé */}
+      <div>
+        <Link
+          href="/quiz"
+          style={{
+            display: 'block',
+            width: '100%',
+            background: '#22C55E',
+            color: '#FFFFFF',
+            fontSize: 17,
+            fontWeight: 700,
+            textAlign: 'center',
+            padding: '18px 0',
+            borderRadius: 50,
+            textDecoration: 'none',
+            boxSizing: 'border-box',
+          }}
+        >
+          Quero descobrir agora!
+        </Link>
+
+        <div style={{ marginTop: 14, textAlign: 'center' }}>
+          <p style={{ fontSize: 12, color: '#7C3AED', margin: '0 0 3px' }}>
+            Teste 100% anônimo
+          </p>
+          <p style={{ fontSize: 12, color: '#7C3AED', margin: 0 }}>
+            P.S.: Informações protegidas com criptografia
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
     </div>
-  );
+  )
 }

@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-roxo-fundo: #EDE9FE;
+  --color-roxo-escuro: #5B21B6;
+  --color-roxo-medio: #7C3AED;
+  --color-roxo-claro: #C4B5FD;
+  --color-roxo-texto: #1E0350;
+  --color-roxo-suave: #4C1D95;
+  --color-roxo-pastel: #F5F3FF;
+  --color-verde-botao: #22C55E;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #EDE9FE;
+  min-height: 100vh;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slide-in 0.2s ease-out both;
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.slide-in { animation: slide-in 0.2s ease-out both; }
+
+@keyframes pulse-brain {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.03); }
+}
+.brain-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse-brain 1.5s ease-in-out infinite;
+}
+
+@keyframes progress-circle {
+  from {
+    stroke-dashoffset: 207.35;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
