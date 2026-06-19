@@ -57,11 +57,11 @@ function SlideConciencia({ onContinuar, numeroPergunta }: Omit<SlideInfoProps, '
       <Barra numeroPergunta={numeroPergunta} />
       <div className="slide-in" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
         <div>
-          <p style={{ fontSize: 13, fontWeight: 700, color: '#7C3AED', margin: '0 0 10px' }}>Você sabia?</p>
+          <p style={{ fontSize: 13, fontWeight: 700, color: '#7C3AED', margin: '0 0 10px' }}>Você não está sozinho(a)..</p>
           <h2 style={{ fontSize: 26, fontWeight: 800, color: '#1E0350', lineHeight: 1.2, margin: '0 0 10px' }}>
             Mais de{' '}
             <span style={{ background: '#5B21B6', color: '#FFFFFF', borderRadius: 4, padding: '0 5px' }}>80%</span>
-            {' '}das pessoas esquecem o que aprendem
+            {' '}das pessoas esquecem o que aprendem no coreano
           </h2>
           <p style={{ fontSize: 18, fontWeight: 700, color: '#5B21B6', margin: '0 0 20px' }}>...em menos de 72 horas.</p>
         </div>
@@ -81,8 +81,8 @@ function SlideConciencia({ onContinuar, numeroPergunta }: Omit<SlideInfoProps, '
         </div>
 
         <p style={{ fontSize: 17, color: '#4C1D95', lineHeight: 1.5, fontWeight: 400, margin: 0 }}>
-          Não é falta de esforço.. e sim, onde esse aprendizado está sendo armazenado na sua{' '}
-          <strong style={{ fontWeight: 700 }}>memória</strong>
+          Não é falta de esforço..{' '}
+          <strong style={{ fontWeight: 700 }}>e sim, onde esse aprendizado está sendo armazenado na sua memória</strong>
         </p>
       </div>
       <BotaoContinuar onClick={onContinuar} />
