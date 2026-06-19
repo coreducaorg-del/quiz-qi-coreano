@@ -79,7 +79,7 @@ export const perguntas: Pergunta[] = [
     texto: 'Qual é a sua maior dificuldade hoje com o coreano?',
     alternativas: [
       { id: 'A', emoji: '📖', texto: 'Esqueço os vocabulários rápido demais' },
-      { id: 'B', emoji: '🗣️', texto: 'A pronúncia não fica na cabeça (ouço e não consigo reproduzir)' },
+      { id: 'B', emoji: '🗣️', texto: 'A pronúncia não fica na cabeça. Eu esqueço' },
       { id: 'C', emoji: '🔄', texto: 'Aprendo uma coisa e quando volto, parece que nunca vi' },
       { id: 'D', emoji: '🤷', texto: 'Não consigo nem começar, não sei por onde ir' },
     ],
@@ -92,7 +92,7 @@ export const perguntas: Pergunta[] = [
     alternativas: [
       { id: 'A', emoji: '😔', texto: 'Sim, mas mesmo assim esqueço. Não resolve de verdade' },
       { id: 'B', emoji: '🚫', texto: 'Tentei algumas vezes mas desisti porque não via resultado' },
-      { id: 'C', emoji: '📋', texto: 'Nunca tentei de forma organizada' },
+      { id: 'C', emoji: '📋', texto: 'Nunca tentei de forma organizada, mas quero tentar' },
     ],
   },
   {
@@ -142,18 +142,7 @@ export const perguntas: Pergunta[] = [
     id: 13,
     tipo: 'pergunta',
     bloco: 'implicacao',
-    texto: 'Se você continuar aprendendo coreano do jeito que está hoje, onde imagina que vai estar daqui a 1 ano?',
-    alternativas: [
-      { id: 'A', emoji: '😔', texto: 'No mesmo lugar. Sei que algo precisa mudar' },
-      { id: 'B', emoji: '🐢', texto: 'Teria avançado um pouco, mas longe de me comunicar fluente' },
-      { id: 'C', emoji: '🚪', texto: 'Provavelmente vou ter desistido no meio do caminho' },
-    ],
-  },
-  {
-    id: 14,
-    tipo: 'pergunta',
-    bloco: 'implicacao',
-    texto: 'Qual dessas situações te incomoda mais quando você pensa no futuro?',
+    texto: 'Se nada mudar, qual dessas situações te incomoda mais quando você pensa no futuro?',
     alternativas: [
       { id: 'A', emoji: '📺', texto: 'Continuar dependendo de legenda pra sempre nos doramas e músicas' },
       { id: 'B', emoji: '🗣️', texto: 'Nunca conseguir entender um coreano de verdade numa conversa real' },
@@ -162,7 +151,7 @@ export const perguntas: Pergunta[] = [
     ],
   },
   {
-    id: 15,
+    id: 14,
     tipo: 'slide',
     bloco: 'implicacao',
     texto: '',
@@ -170,63 +159,35 @@ export const perguntas: Pergunta[] = [
       'Se você se identificou com alguma dessas situações, saiba que não é falta de talento nem de dedicação. O que acontece é que tudo que você aprende de coreano hoje. Vocabulários, pronúncias, expressões. Está sendo armazenado na sua memória de curto prazo. E a memória de curto prazo foi feita pra descartar. É assim que o cérebro funciona quando não recebe o estímulo certo.',
   },
   {
+    id: 15,
+    tipo: 'pergunta',
+    bloco: 'solucao',
+    texto: 'Pelas suas respostas. Identifico que busca mudar essa situação o mais rápido possível, certo?',
+    alternativas: [
+      { id: 'A', emoji: '🔥', texto: 'Sim. Não aguento mais depender de legendas para entender a cultura que amo' },
+      { id: 'B', emoji: '🌱', texto: 'Quero aprender com calma, mas estou comprometido(a)' },
+    ],
+  },
+  {
     id: 16,
     tipo: 'pergunta',
-    bloco: 'situacao',
-    texto: 'Como você prefere aprender coisas novas no geral?',
+    bloco: 'solucao',
+    texto: 'Se você soubesse exatamente o que fazer pra aprender coreano do jeito certo, você começaria hoje?',
     alternativas: [
-      { id: 'A', emoji: '🎬', texto: 'Assistindo vídeos e ouvindo explicações' },
-      { id: 'B', emoji: '📝', texto: 'Lendo e anotando no meu ritmo' },
-      { id: 'C', emoji: '🏃', texto: 'Na prática. Tentando e errando' },
-      { id: 'D', emoji: '🎯', texto: 'Uma mistura de tudo isso' },
+      { id: 'A', emoji: '🚀', texto: 'Sim. Estou pronto(a) pra isso agora' },
+      { id: 'B', emoji: '✅', texto: 'Sim. Só preciso entender como funciona primeiro' },
+      { id: 'C', emoji: '🐢', texto: 'Provavelmente sim, mas com calma' },
     ],
   },
   {
     id: 17,
     tipo: 'pergunta',
     bloco: 'solucao',
-    texto: 'O que faria mais diferença pra você nesse momento?',
-    alternativas: [
-      { id: 'A', emoji: '🧠', texto: 'Entender por que esqueço tudo e como mudar isso de vez' },
-      { id: 'B', emoji: '🗺️', texto: 'Ter um passo a passo claro de onde começar' },
-      { id: 'C', emoji: '💪', texto: 'Me sentir confiante de que sou capaz de aprender' },
-      { id: 'D', emoji: '🤝', texto: 'Ter alguém me guiando ao invés de aprender sozinho(a)' },
-    ],
-  },
-  {
-    id: 18,
-    tipo: 'pergunta',
-    bloco: 'solucao',
-    texto: 'Se você soubesse exatamente o que fazer pra parar de esquecer o coreano, você começaria hoje?',
-    alternativas: [
-      { id: 'A', emoji: '🚀', texto: 'Sim. Estou pronto(a) pra isso agora' },
-      { id: 'B', emoji: '✅', texto: 'Sim. Só preciso entender como funciona primeiro' },
-      { id: 'C', emoji: '🐢', texto: 'Provavelmente sim, mas com calma' },
-      { id: 'D', emoji: '😰', texto: 'Não sei. Tenho medo de começar e desistir de novo' },
-    ],
-  },
-  {
-    id: 19,
-    tipo: 'pergunta',
-    bloco: 'solucao',
-    texto: 'Você acredita que aprender coreano de verdade é possível pra você?',
-    alternativas: [
-      { id: 'A', emoji: '💯', texto: 'Sim, acredito. Só preciso do método certo' },
-      { id: 'B', emoji: '🌱', texto: 'Acredito, mas tenho minhas inseguranças' },
-      { id: 'C', emoji: '😟', texto: 'Tenho dúvidas. Parece difícil demais às vezes' },
-      { id: 'D', emoji: '❓', texto: 'Não sei. Nunca me vi como boa pessoa pra idiomas' },
-    ],
-  },
-  {
-    id: 20,
-    tipo: 'pergunta',
-    bloco: 'solucao',
-    texto: 'Se existisse um método que te ajudasse a guardar o coreano na memória de forma natural e duradoura, você estaria disposto(a) a aprender?',
+    texto: 'Ou seja, se existisse um método que te ajudasse a guardar o coreano na memória de forma natural e duradoura, você estaria disposto(a) a aprender?',
     alternativas: [
       { id: 'A', emoji: '🙌', texto: 'Sim, com certeza. É exatamente o que estou precisando' },
       { id: 'B', emoji: '🔍', texto: 'Sim, mas dependeria de como funciona' },
-      { id: 'C', emoji: '🤷', texto: 'Talvez. Ainda tenho dúvidas se consigo aprender coreano' },
-      { id: 'D', emoji: '😔', texto: 'Não sei, já tentei várias coisas e nenhuma funcionou' },
+      { id: 'C', emoji: '🤷', texto: 'Talvez, a depender do método. Mas quero aprender sim!' },
     ],
   },
 ]

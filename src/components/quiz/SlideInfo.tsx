@@ -3,9 +3,8 @@
 import { useEffect, useState } from 'react'
 
 const progressMap: Record<number, number> = {
-  1: 18, 2: 28, 3: 37, 4: 45, 5: 52, 6: 58, 7: 63, 8: 68,
-  9: 72, 10: 75, 11: 78, 12: 81, 13: 83, 14: 85,
-  15: 87, 16: 89, 17: 91, 18: 93, 19: 96, 20: 100,
+  1: 22, 2: 33, 3: 42, 4: 50, 5: 57, 6: 63, 7: 68, 8: 73,
+  9: 77, 10: 81, 11: 85, 12: 88, 13: 91, 14: 95, 15: 100,
 }
 
 const BAR_MAX_HEIGHT = 120
@@ -144,7 +143,7 @@ function SlideNormalizacao({ onContinuar, numeroPergunta }: Omit<SlideInfoProps,
 /* ─── Exportação — roteamento por id ─── */
 export default function SlideInfo({ id, texto, onContinuar, numeroPergunta }: SlideInfoProps) {
   if (id === 9)  return <SlideConciencia  onContinuar={onContinuar} numeroPergunta={numeroPergunta} />
-  if (id === 15) return <SlideNormalizacao onContinuar={onContinuar} numeroPergunta={numeroPergunta} />
+  if (id === 14) return <SlideNormalizacao onContinuar={onContinuar} numeroPergunta={numeroPergunta} />
   // fallback genérico (não usado, mas mantém segurança de tipo)
   return (
     <div style={{ maxWidth: 384, margin: '0 auto', width: '100%', padding: '20px 20px 32px', minHeight: '100vh', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}>
