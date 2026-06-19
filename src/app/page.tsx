@@ -75,7 +75,7 @@ export default function Home() {
             fontSize: 18,
             fontWeight: 700,
             lineHeight: 1.85,
-            margin: '32px 0 18px',
+            margin: '16px 0 18px',
           }}
         >
           <span
