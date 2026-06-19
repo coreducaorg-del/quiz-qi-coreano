@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import BotaoVoltar from './BotaoVoltar'
 
 const progressMap: Record<number, number> = {
   1: 22, 2: 33, 3: 42, 4: 50, 5: 57, 6: 63, 7: 68, 8: 73,
@@ -13,6 +14,7 @@ interface SlideInfoProps {
   id: number
   texto: string
   onContinuar: () => void
+  onVoltar: () => void
   numeroPergunta: number
 }
 
@@ -26,7 +28,7 @@ function Barra({ numeroPergunta }: { numeroPergunta: number }) {
   )
 }
 
-/* ─── Botão compartilhado ─── */
+/* ─── Botão continuar compartilhado ─── */
 function BotaoContinuar({ onClick }: { onClick: () => void }) {
   return (
     <button
@@ -38,8 +40,10 @@ function BotaoContinuar({ onClick }: { onClick: () => void }) {
   )
 }
 
+type SlideBaseProps = Omit<SlideInfoProps, 'id' | 'texto'>
+
 /* ─── Slide 1 — "Você sabia?" com gráfico de barras ─── */
-function SlideConciencia({ onContinuar, numeroPergunta }: Omit<SlideInfoProps, 'id' | 'texto'>) {
+function SlideConciencia({ onContinuar, onVoltar, numeroPergunta }: SlideBaseProps) {
   const [animado, setAnimado] = useState(false)
 
   useEffect(() => {
@@ -55,9 +59,10 @@ function SlideConciencia({ onContinuar, numeroPergunta }: Omit<SlideInfoProps, '
   return (
     <div style={{ maxWidth: 384, margin: '0 auto', width: '100%', padding: '20px 20px 32px', minHeight: '100vh', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}>
       <Barra numeroPergunta={numeroPergunta} />
+      <BotaoVoltar onClick={onVoltar} />
       <div className="slide-in" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
         <div>
-          <p style={{ fontSize: 13, fontWeight: 700, color: '#7C3AED', margin: '0 0 10px' }}>Você não está sozinho(a)..</p>
+          <p style={{ fontSize: 13, fontWeight: 700, color: '#7C3AED', margin: '8px 0 10px' }}>Você não está sozinho(a)..</p>
           <h2 style={{ fontSize: 26, fontWeight: 800, color: '#1E0350', lineHeight: 1.2, margin: '0 0 10px' }}>
             Mais de{' '}
             <span style={{ background: '#5B21B6', color: '#FFFFFF', borderRadius: 4, padding: '0 5px' }}>80%</span>
@@ -91,15 +96,16 @@ function SlideConciencia({ onContinuar, numeroPergunta }: Omit<SlideInfoProps, '
 }
 
 /* ─── Slide 2 — "Normalização" com ilustração do cérebro ─── */
-function SlideNormalizacao({ onContinuar, numeroPergunta }: Omit<SlideInfoProps, 'id' | 'texto'>) {
+function SlideNormalizacao({ onContinuar, onVoltar, numeroPergunta }: SlideBaseProps) {
   return (
     <div style={{ maxWidth: 384, margin: '0 auto', width: '100%', padding: '20px 20px 32px', minHeight: '100vh', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}>
       <Barra numeroPergunta={numeroPergunta} />
+      <BotaoVoltar onClick={onVoltar} />
       <div className="slide-in" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
 
         {/* Textos hierárquicos */}
         <div>
-          <p style={{ fontSize: 13, fontWeight: 700, color: '#7C3AED', margin: '0 0 10px', textAlign: 'left' }}>
+          <p style={{ fontSize: 13, fontWeight: 700, color: '#7C3AED', margin: '8px 0 10px', textAlign: 'left' }}>
             Entenda o que está acontecendo
           </p>
           <h2 style={{ fontSize: 26, fontWeight: 800, color: '#1E0350', lineHeight: 1.2, margin: '0 0 6px' }}>
@@ -141,13 +147,14 @@ function SlideNormalizacao({ onContinuar, numeroPergunta }: Omit<SlideInfoProps,
 }
 
 /* ─── Exportação — roteamento por id ─── */
-export default function SlideInfo({ id, texto, onContinuar, numeroPergunta }: SlideInfoProps) {
-  if (id === 9)  return <SlideConciencia  onContinuar={onContinuar} numeroPergunta={numeroPergunta} />
-  if (id === 14) return <SlideNormalizacao onContinuar={onContinuar} numeroPergunta={numeroPergunta} />
+export default function SlideInfo({ id, texto, onContinuar, onVoltar, numeroPergunta }: SlideInfoProps) {
+  if (id === 9)  return <SlideConciencia  onContinuar={onContinuar} onVoltar={onVoltar} numeroPergunta={numeroPergunta} />
+  if (id === 14) return <SlideNormalizacao onContinuar={onContinuar} onVoltar={onVoltar} numeroPergunta={numeroPergunta} />
   // fallback genérico (não usado, mas mantém segurança de tipo)
   return (
     <div style={{ maxWidth: 384, margin: '0 auto', width: '100%', padding: '20px 20px 32px', minHeight: '100vh', display: 'flex', flexDirection: 'column', boxSizing: 'border-box' }}>
       <Barra numeroPergunta={numeroPergunta} />
+      <BotaoVoltar onClick={onVoltar} />
       <div className="slide-in" style={{ flex: 1, display: 'flex', alignItems: 'center' }}>
         <p style={{ fontSize: 15, color: '#3B0764', lineHeight: 1.6 }}>{texto}</p>
       </div>

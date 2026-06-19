@@ -6,13 +6,17 @@ import { Alternativa as AlternativaType } from '@/lib/tipos'
 interface AlternativaProps {
   alternativa: AlternativaType
   onClick: (id: string) => void
+  selecionadaInicial?: boolean
 }
 
-export default function Alternativa({ alternativa, onClick }: AlternativaProps) {
-  const [selecionada, setSelecionada] = useState(false)
+export default function Alternativa({ alternativa, onClick, selecionadaInicial = false }: AlternativaProps) {
+  const [selecionada, setSelecionada] = useState(selecionadaInicial)
 
   function handleClick() {
-    if (selecionada) return
+    if (selecionada) {
+      onClick(alternativa.id)
+      return
+    }
     setSelecionada(true)
     setTimeout(() => onClick(alternativa.id), 300)
   }
