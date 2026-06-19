@@ -111,7 +111,7 @@ export default function Home() {
       {/* Seção 3 — Botão + rodapé */}
       <div>
         <Link
-          href="/quiz"
+          href="/aviso"
           style={{
             display: 'block',
             width: '100%',
