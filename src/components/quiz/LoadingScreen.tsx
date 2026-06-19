@@ -14,12 +14,15 @@ const textos = [
 export default function LoadingScreen() {
   const [fase, setFase] = useState(0)       // 0 = primeiro texto, 1 = segundo texto
   const [visivel, setVisivel] = useState(true) // controla fade
+  const [completo, setCompleto] = useState(false) // 100% — círculo verde + check
 
   useEffect(() => {
     // Troca de texto com fade: começa fade-out em 2300ms, troca em 2700ms, fade-in
     const fadeOut = setTimeout(() => setVisivel(false), 2300)
     const trocar  = setTimeout(() => { setFase(1); setVisivel(true) }, 2700)
-    return () => { clearTimeout(fadeOut); clearTimeout(trocar) }
+    // Ao completar os 5000ms da animação do círculo, mostra o check
+    const finalizar = setTimeout(() => setCompleto(true), 5000)
+    return () => { clearTimeout(fadeOut); clearTimeout(trocar); clearTimeout(finalizar) }
   }, [])
 
   return (
@@ -36,32 +39,53 @@ export default function LoadingScreen() {
       }}
     >
       {/* Círculo de progresso SVG */}
-      <svg width={72} height={72} style={{ marginBottom: 24, transform: 'rotate(-90deg)' }}>
-        {/* Trilha (fundo) */}
-        <circle
-          cx={36}
-          cy={36}
-          r={RADIUS}
-          fill="none"
-          stroke="#C4B5FD"
-          strokeWidth={6}
-        />
-        {/* Preenchimento animado */}
-        <circle
-          cx={36}
-          cy={36}
-          r={RADIUS}
-          fill="none"
-          stroke="#5B21B6"
-          strokeWidth={6}
-          strokeLinecap="round"
-          strokeDasharray={CIRCUMFERENCE}
-          style={{
-            strokeDashoffset: CIRCUMFERENCE,
-            animation: 'progress-circle 5000ms linear forwards',
-          }}
-        />
-      </svg>
+      <div style={{ position: 'relative', width: 72, height: 72, marginBottom: 24 }}>
+        <svg width={72} height={72} style={{ transform: completo ? 'none' : 'rotate(-90deg)' }}>
+          {/* Trilha (fundo) */}
+          <circle cx={36} cy={36} r={RADIUS} fill="none" stroke="#C4B5FD" strokeWidth={6} />
+          {completo ? (
+            // Preenchimento sólido verde ao completar
+            <circle cx={36} cy={36} r={RADIUS} fill="#22C55E" />
+          ) : (
+            // Preenchimento animado do progresso
+            <circle
+              cx={36}
+              cy={36}
+              r={RADIUS}
+              fill="none"
+              stroke="#5B21B6"
+              strokeWidth={6}
+              strokeLinecap="round"
+              strokeDasharray={CIRCUMFERENCE}
+              style={{
+                strokeDashoffset: CIRCUMFERENCE,
+                animation: 'progress-circle 5000ms linear forwards',
+              }}
+            />
+          )}
+        </svg>
+
+        {/* Check no centro */}
+        {completo && (
+          <span
+            className="loading-check-fade"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: 72,
+              height: 72,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: 28,
+              color: '#FFFFFF',
+            }}
+          >
+            ✓
+          </span>
+        )}
+      </div>
 
       {/* Texto alternado com fade */}
       <p

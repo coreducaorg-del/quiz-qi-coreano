@@ -39,9 +39,10 @@ export default function QuizContainer() {
   function finalizarQuiz() {
     setLoading(true)
     const tipo = calcularResultado(respostas)
+    // 5000ms da animação do círculo + 800ms com o check visível
     setTimeout(() => {
       router.push(`/resultado?tipo=${tipo}`)
-    }, 5000)
+    }, 5800)
   }
 
   if (loading) {

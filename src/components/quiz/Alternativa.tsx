@@ -39,7 +39,7 @@ export default function Alternativa({ alternativa, onClick }: AlternativaProps) 
           {alternativa.emoji}
         </span>
       )}
-      <span style={{ fontSize: 14, color: '#1a1a1a', lineHeight: 1.4 }}>
+      <span style={{ fontSize: 17, color: '#1a1a1a', lineHeight: 1.4 }}>
         {alternativa.texto}
       </span>
     </button>
